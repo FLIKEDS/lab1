@@ -9,5 +9,6 @@ public class DeviceOperation {
     private final List<Command> commands = new ArrayList<>();
     public void executeOperation(Command command){
         commands.add(command);
+        command.execute();
     }
 }

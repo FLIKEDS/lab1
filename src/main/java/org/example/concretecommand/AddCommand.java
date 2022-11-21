@@ -10,6 +10,6 @@ public class AddCommand implements Command {
     }
     @Override
     public void execute() {
-        device.add();
+        device.addDevice();
     }
 }
