@@ -2,14 +2,18 @@ package org.example.concretecommand;
 
 import org.example.interfacecomand.Command;
 import org.example.recivercommand.Device;
+import org.example.recivercommand.DeviceService;
+
+import java.util.List;
 
 public class AddCommand implements Command {
-    Device device;
-    public AddCommand(Device device) {
-        this.device = device;
+    List<Device> devices;
+    DeviceService deviceService = new DeviceService();
+    public AddCommand(List<Device> devices) {
+        this.devices = devices;
     }
     @Override
     public void execute() {
-        device.addDevice();
+        deviceService.addDevice(devices);
     }
 }
