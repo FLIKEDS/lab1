@@ -1,7 +1,6 @@
 package org.example;
 
-import org.example.concretecommand.AddCommand;
-import org.example.concretecommand.SearchCommand;
+import org.example.concretecommand.*;
 import org.example.invokerpackage.DeviceOperation;
 import org.example.recivercommand.Device;
 
@@ -24,6 +23,18 @@ public class Main {
             }
             if (s.equals("/search")) {
                 deviceOperation.executeOperation(new SearchCommand(devices));
+                s = in.next();
+            }
+            if(s.equals("/print")){
+                deviceOperation.executeOperation(new ToStringCommand(devices));
+                s = in.next();
+            }
+            if(s.equals("/on")){
+                deviceOperation.executeOperation(new OnCommand(devices));
+                s = in.next();
+            }
+            if(s.equals("/takeCap")){
+                deviceOperation.executeOperation(new TakeAllCap(devices));
                 s = in.next();
             }
             exit = s.equals("/exit");
