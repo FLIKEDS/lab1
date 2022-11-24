@@ -6,13 +6,6 @@ import java.util.Scanner;
 
 
 public class DeviceService {
-    /*public static void searchNameDevice(String name, Device[] device) {
-        for (int i = 0; i < 3; i++) {
-            if (device[i].getName().equals(name)) {
-                System.out.println(device[i].toString());
-            }
-        }
-    }*/
 
     public static void onDevice(List<Device> devices) {
         Scanner in = new Scanner(System.in);
@@ -26,6 +19,17 @@ public class DeviceService {
                 } else {
                     System.out.println("Девайс включений!");
                 }
+            }
+        }
+    }
+    public static void offDevice(List<Device> devices) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть назву девайсу");
+        String name = in.nextLine();
+        for (Device device : devices) {
+            if (device.getName().equals(name)){
+                    device.setOnOff(false);
+                    System.out.println("Девайс виключений!");
             }
         }
 
@@ -69,9 +73,6 @@ public class DeviceService {
     public void delete() {
         System.out.println("Видаляємо...");
     }
-    /*public void  sorts(List<Device> devices){
-        Collections.sort(devices);
-    }*/
 
     public void takeAllCap(List<Device> devices){
         int result = 0;
