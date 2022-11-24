@@ -1,7 +1,9 @@
 package org.example.recivercommand;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class DeviceService {
     /*public static void searchNameDevice(String name, Device[] device) {
@@ -67,6 +69,9 @@ public class DeviceService {
     public void delete() {
         System.out.println("Видаляємо...");
     }
+    /*public void  sorts(List<Device> devices){
+        Collections.sort(devices);
+    }*/
 
     public void takeAllCap(List<Device> devices){
         int result = 0;
@@ -74,5 +79,9 @@ public class DeviceService {
             result += device.getCapacity();
         }
         System.out.println(result);
+    }
+    public void sort(List<Device> devices){
+        Collections.sort(devices);
+        System.out.println("Список відсортовано");
     }
 }

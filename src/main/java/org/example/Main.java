@@ -37,6 +37,10 @@ public class Main {
                 deviceOperation.executeOperation(new TakeAllCap(devices));
                 s = in.next();
             }
+            if (s.equals("/sort")){
+                deviceOperation.executeOperation(new SortCommand(devices));
+                s = in.next();
+            }
             exit = s.equals("/exit");
         } while (!exit);
     }

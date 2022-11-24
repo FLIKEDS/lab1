@@ -1,11 +1,12 @@
 package org.example.recivercommand;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Device {
+public class Device implements  Comparable<Device> {
     private String name;
-    private int capacity;
+    public int capacity;
     private String color;
     private int weight;
     private boolean onOff;
@@ -59,6 +60,11 @@ public class Device {
                 ", weight=" + weight +
                 ", onOff=" + onOff +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Device o) {
+        return this.capacity-o.capacity;
     }
 
 }
