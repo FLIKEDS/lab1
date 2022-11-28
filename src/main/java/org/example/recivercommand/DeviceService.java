@@ -17,24 +17,12 @@ public class DeviceService {
                     device.setOnOff(true);
                     System.out.println("Девайс включився!");
                 } else {
-                    System.out.println("Девайс включений!");
+                    device.setOnOff(false);
+                    System.out.println("Девайс виключився!");
                 }
             }
         }
     }
-    public static void offDevice(List<Device> devices) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введіть назву девайсу");
-        String name = in.nextLine();
-        for (Device device : devices) {
-            if (device.getName().equals(name)){
-                    device.setOnOff(false);
-                    System.out.println("Девайс виключений!");
-            }
-        }
-
-    }
-
     public void addDevice(List<Device> devices) {
         Device device = new Device();
         Scanner in = new Scanner(System.in);

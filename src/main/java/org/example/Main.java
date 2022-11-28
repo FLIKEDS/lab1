@@ -41,10 +41,6 @@ public class Main {
                 deviceOperation.executeOperation(new SortCommand(devices));
                 s = in.next();
             }
-            if (s.equals("/off")){
-                deviceOperation.executeOperation(new OffCommand(devices));
-                s = in.next();
-            }
             exit = s.equals("/exit");
         } while (!exit);
     }
